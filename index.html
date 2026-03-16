@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Интернет-магазин</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Мой магазин</h1>
+      <div class="cart-info">
+        <span>Корзина: 0 товаров</span>
+        <span>Сумма: 0 ₽</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="products">
+      <div class="container">
+        <h2>Каталог товаров</h2>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <img src="https://via.placeholder.com/200x150" alt="Товар 1">
+            <h3>Наушники</h3>
+            <p class="price">3500 ₽</p>
+            <button>Добавить в корзину</button>
+          </article>
+
+          <article class="product-card">
+            <img src="https://via.placeholder.com/200x150" alt="Товар 2">
+            <h3>Клавиатура</h3>
+            <p class="price">5200 ₽</p>
+            <button>Добавить в корзину</button>
+          </article>
+
+          <article class="product-card">
+            <img src="https://via.placeholder.com/200x150" alt="Товар 3">
+            <h3>Мышь</h3>
+            <p class="price">2400 ₽</p>
+            <button>Добавить в корзину</button>
+          </article>
+
+          <article class="product-card">
+            <img src="https://via.placeholder.com/200x150" alt="Товар 4">
+            <h3>Монитор</h3>
+            <p class="price">18900 ₽</p>
+            <button>Добавить в корзину</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cart">
+      <div class="container">
+        <h2>Корзина</h2>
+
+        <div class="cart-item">
+          <span>Наушники</span>
+          <span>1 шт.</span>
+          <span>3500 ₽</span>
+          <button>Удалить</button>
+        </div>
+
+        <div class="cart-total">
+          <strong>Итого: 3500 ₽</strong>
+        </div>
+
+        <button class="order-btn">Оформить заказ</button>
+      </div>
+    </section>
+
+    <section class="order-form-section">
+      <div class="container">
+        <h2>Оформление заказа</h2>
+
+        <form class="order-form">
+          <input type="text" placeholder="Имя">
+          <input type="text" placeholder="Фамилия">
+          <input type="text" placeholder="Адрес доставки">
+          <input type="tel" placeholder="Контактный номер телефона">
+          <button type="submit">Создать заказ</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
