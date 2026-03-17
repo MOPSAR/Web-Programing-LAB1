@@ -92,6 +92,25 @@ function renderCart() {
     cartItems.appendChild(cartItem);
   });
 
+  cartItem.innerHTML = `
+  <span>${item.title}</span>
+  <div class="cart-controls">
+    <button class="decrease-btn">-</button>
+    <span>${item.quantity}</span>
+    <button class="increase-btn">+</button>
+  </div>
+  <span>${item.price * item.quantity} ₽</span>
+  <button class="remove-btn">Удалить</button>
+`;
+cartItem.querySelector(".decrease-btn").addEventListener("click", () => {
+  changeQuantity(item.id, -1);
+});
+
+cartItem.querySelector(".increase-btn").addEventListener("click", () => {
+  changeQuantity(item.id, 1);
+});
+
+
   updateCartInfo();
 }
 
@@ -110,6 +129,21 @@ function addToCart(productId) {
 
 function removeFromCart(productId) {
   cart = cart.filter(item => item.id !== productId);
+  renderCart();
+}
+
+function changeQuantity(productId, amount) {
+  const item = cart.find(product => product.id === productId);
+
+  if (!item) return;
+
+  item.quantity += amount;
+
+  if (item.quantity <= 0) {
+    removeFromCart(productId);
+    return;
+  }
+
   renderCart();
 }
 
