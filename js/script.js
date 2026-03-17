@@ -80,10 +80,14 @@ function renderCart() {
     cartItem.className = "cart-item";
 
     cartItem.innerHTML = `
-      <span>${item.title}</span>
-      <span>${item.quantity} шт.</span>
-      <span>${item.price * item.quantity} ₽</span>
-    `;
+  <span>${item.title}</span>
+  <span>${item.quantity} шт.</span>
+  <span>${item.price * item.quantity} ₽</span>
+  <button class="remove-btn">Удалить</button>`;
+
+    cartItem.querySelector(".remove-btn").addEventListener("click", () => {
+      removeFromCart(item.id);
+    });
 
     cartItems.appendChild(cartItem);
   });
@@ -101,6 +105,11 @@ function addToCart(productId) {
     cart.push({ ...product, quantity: 1 });
   }
 
+  renderCart();
+}
+
+function removeFromCart(productId) {
+  cart = cart.filter(item => item.id !== productId);
   renderCart();
 }
 
