@@ -1,65 +1,35 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Интернет-магазин</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<main>
+  <section class="catalog">
+    <h2>Каталог товаров</h2>
 
-  <header class="header">
-    <div class="container header__container">
-      <h1 class="logo">Tech Store</h1>
-      <div class="cart-summary">
-        <span>Товаров: <span id="cart-count">0</span></span>
-        <span>Сумма: <span id="cart-total">0</span> ₽</span>
-      </div>
+    <div class="products-grid">
+      <article class="product-card">
+        <img src="assets/images/headphones.jpg" alt="Наушники">
+        <h3>Наушники</h3>
+        <p>3500 ₽</p>
+        <button>Добавить в корзину</button>
+      </article>
+
+      <article class="product-card">
+        <img src="assets/images/keyboard.jpg" alt="Клавиатура">
+        <h3>Клавиатура</h3>
+        <p>5200 ₽</p>
+        <button>Добавить в корзину</button>
+      </article>
+
+      <article class="product-card">
+        <img src="assets/images/mouse.jpg" alt="Мышь">
+        <h3>Мышь</h3>
+        <p>2400 ₽</p>
+        <button>Добавить в корзину</button>
+      </article>
+
+      <article class="product-card">
+        <img src="assets/images/monitor.jpg" alt="Монитор">
+        <h3>Монитор</h3>
+        <p>18900 ₽</p>
+        <button>Добавить в корзину</button>
+      </article>
     </div>
-  </header>
-
-  <main class="main">
-    <section class="catalog">
-      <div class="container">
-        <h2 class="section-title">Каталог товаров</h2>
-        <div class="products-grid" id="products-grid">
-          <!-- Товары будут добавляться через JS -->
-        </div>
-      </div>
-    </section>
-
-    <section class="cart-section">
-      <div class="container">
-        <h2 class="section-title">Корзина</h2>
-        <div id="cart-items" class="cart-items">
-          <p class="empty-cart">Корзина пуста</p>
-        </div>
-
-        <div class="cart-footer">
-          <h3>Итого: <span id="cart-final-total">0</span> ₽</h3>
-          <button class="order-btn" id="open-order-modal">Оформить заказ</button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <div class="modal hidden" id="order-modal">
-    <div class="modal-content">
-      <button class="close-btn" id="close-order-modal">&times;</button>
-      <h2>Оформление заказа</h2>
-
-      <form id="order-form" class="order-form">
-        <input type="text" id="first-name" placeholder="Имя" required>
-        <input type="text" id="last-name" placeholder="Фамилия" required>
-        <input type="text" id="address" placeholder="Адрес доставки" required>
-        <input type="tel" id="phone" placeholder="Контактный номер телефона" required>
-        <button type="submit">Создать заказ</button>
-      </form>
-
-      <p id="order-message" class="order-message"></p>
-    </div>
-  </div>
-
-  <script src="js/script.js"></script>
-</body>
-</html>
+  </section>
+</main>
