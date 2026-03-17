@@ -52,3 +52,28 @@ main {
   border-radius: 6px;
   cursor: pointer;
 }
+
+.cart-section {
+  margin-top: 40px;
+}
+
+.cart-summary {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart-item {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
