@@ -154,5 +154,36 @@ function changeQuantity(productId, amount) {
   saveCart();
 }
 
+
+
+const openOrderModalBtn = document.getElementById("open-order-modal");
+const closeOrderModalBtn = document.getElementById("close-order-modal");
+const orderModal = document.getElementById("order-modal");
+const orderForm = document.getElementById("order-form");
+const orderMessage = document.getElementById("order-message");
+
+openOrderModalBtn.addEventListener("click", () => {
+  if (cart.length === 0) {
+    alert("Корзина пуста");
+    return;
+  }
+
+  orderModal.classList.remove("hidden");
+});
+
+closeOrderModalBtn.addEventListener("click", () => {
+  orderModal.classList.add("hidden");
+});
+
+orderForm.addEventListener("submit", event => {
+  event.preventDefault();
+
+  orderMessage.textContent = "Заказ создан!";
+  cart = [];
+  saveCart();
+  renderCart();
+  orderForm.reset();
+});
+
 renderProducts();
 renderCart();
