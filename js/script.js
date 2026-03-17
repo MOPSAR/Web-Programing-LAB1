@@ -52,7 +52,11 @@ function renderProducts() {
 renderProducts();
 
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
 
 const cartItems = document.getElementById("cart-items");
 const cartCount = document.getElementById("cart-count");
@@ -125,11 +129,13 @@ function addToCart(productId) {
   }
 
   renderCart();
+  saveCart();
 }
 
 function removeFromCart(productId) {
   cart = cart.filter(item => item.id !== productId);
   renderCart();
+  saveCart();
 }
 
 function changeQuantity(productId, amount) {
@@ -145,6 +151,7 @@ function changeQuantity(productId, amount) {
   }
 
   renderCart();
+  saveCart();
 }
 
 renderProducts();
