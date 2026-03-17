@@ -1,38 +1,64 @@
-<main>
-  <section class="catalog">
-    <h2>Каталог товаров</h2>
-    <div class="products-grid" id="products-grid"></div>
-  </section>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Интернет-магазин</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <h1 class="logo">Tech Store</h1>
 
-  <section class="cart-section">
-  <h2>Корзина</h2>
+      <div class="cart-summary">
+        <span>Товаров: <span id="cart-count">0</span></span>
+        <span>Сумма: <span id="cart-total">0</span> ₽</span>
+      </div>
+    </div>
+  </header>
 
-  <div class="cart-summary">
-    <span>Товаров: <span id="cart-count">0</span></span>
-    <span>Сумма: <span id="cart-total">0</span> ₽</span>
+  <main class="main">
+    <section class="catalog">
+      <div class="container">
+        <h2 class="section-title">Каталог товаров</h2>
+        <div class="products-grid" id="products-grid"></div>
+      </div>
+    </section>
+
+    <section class="cart-section">
+      <div class="container">
+        <h2 class="section-title">Корзина</h2>
+
+        <div class="cart-items" id="cart-items">
+          <p class="empty-cart">Корзина пуста</p>
+        </div>
+
+        <div class="cart-footer">
+          <h3>Итого: <span id="cart-final-total">0</span> ₽</h3>
+          <button class="order-btn" id="open-order-modal">Оформить заказ</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="order-modal">
+    <div class="modal-content">
+      <button class="close-btn" id="close-order-modal" aria-label="Закрыть">&times;</button>
+      <h2>Оформление заказа</h2>
+
+      <form class="order-form" id="order-form">
+        <input type="text" id="first-name" placeholder="Имя" required />
+        <input type="text" id="last-name" placeholder="Фамилия" required />
+        <input type="text" id="address" placeholder="Адрес доставки" required />
+        <input type="tel" id="phone" placeholder="Контактный номер телефона" required />
+        <button type="submit">Создать заказ</button>
+      </form>
+
+      <p class="order-message" id="order-message"></p>
+    </div>
   </div>
 
-  <div id="cart-items" class="cart-items">
-    <p>Корзина пуста</p>
-  </div>
-
-  <button id="open-order-modal">Оформить заказ</button>
-</section>
-
-<div class="modal hidden" id="order-modal">
-  <div class="modal-content">
-    <button class="close-btn" id="close-order-modal">&times;</button>
-    <h2>Оформление заказа</h2>
-
-    <form id="order-form" class="order-form">
-      <input type="text" id="first-name" placeholder="Имя" required>
-      <input type="text" id="last-name" placeholder="Фамилия" required>
-      <input type="text" id="address" placeholder="Адрес доставки" required>
-      <input type="tel" id="phone" placeholder="Контактный номер телефона" required>
-      <button type="submit">Создать заказ</button>
-    </form>
-
-    <p id="order-message"></p>
-  </div>
-</div>
-</main>
+  <script src="js/script.js"></script>
+</body>
+</html>
