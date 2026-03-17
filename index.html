@@ -18,4 +18,21 @@
 
   <button id="open-order-modal">Оформить заказ</button>
 </section>
+
+<div class="modal hidden" id="order-modal">
+  <div class="modal-content">
+    <button class="close-btn" id="close-order-modal">&times;</button>
+    <h2>Оформление заказа</h2>
+
+    <form id="order-form" class="order-form">
+      <input type="text" id="first-name" placeholder="Имя" required>
+      <input type="text" id="last-name" placeholder="Фамилия" required>
+      <input type="text" id="address" placeholder="Адрес доставки" required>
+      <input type="tel" id="phone" placeholder="Контактный номер телефона" required>
+      <button type="submit">Создать заказ</button>
+    </form>
+
+    <p id="order-message"></p>
+  </div>
+</div>
 </main>
